@@ -1,0 +1,50 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.navigation {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: $white;
+    box-sizing: border-box;
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    
+        @include resetUl;
+    }
+    &__item {
+        text-transform: uppercase;
+        margin-right: 25px;
+        position: relative;
+        @include animationLinkUnderline;
+        transition: .1s;
+        &::after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 0;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            background-color: $active-link-color;
+            z-index: 1;
+            margin: auto;
+        }
+        &:hover {
+            &::after{
+                animation: animationUnderline .3s forwards;
+            }
+        }
+        &:nth-last-of-type(1) {
+            margin-right: 0;
+        }
+    }
+    &__link {
+        text-decoration: none;
+        color: $borders;
+        font-weight: 400;
+        font-size: 17px;
+    }
+};

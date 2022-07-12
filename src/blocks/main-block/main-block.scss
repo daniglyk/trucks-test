@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.main-block {
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: 270px 1fr;
+    grid-template-rows: max-content max-content;
+    position: relative;
+    grid-template-areas:
+    ". hd"
+    "sb cd";
+    grid-gap: 20px;
+    margin-bottom: 20px;
+    &__heading {
+        grid-area: hd;
+        margin: 0;
+        font-size: 22px;
+        line-height: 26px;
+        color: $black;
+        @include  mediaTablet{
+            font-size: 20px;
+        }
+    }
+    @include mediaNetbook {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "hd"
+        "sb"
+        "cd";
+    }
+}

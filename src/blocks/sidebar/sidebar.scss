@@ -1,0 +1,253 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.sidebar {
+    width: 270px;
+    height: max-content;
+    background-color: $white;
+    grid-area: sb;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+
+    &__results {
+        font-size: 16px;
+        font-weight: 500;
+        width: 100%;
+    
+        border-bottom: 1px solid $borders;
+        padding-bottom: 15px;
+    }
+    
+}
+
+.sidebar__heading {
+    display: none;
+    position: relative;
+    margin: 0;
+    text-transform: uppercase;
+    color: $default-text;
+    font-size: 25px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    align-self: center;
+    padding: 20px;
+    transition: .1s;
+
+    &:hover {
+        background-color: $filter-background;
+        transition: .2s;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 30px;
+        background-image: url('../../img/filter.png');
+        background-size: contain;
+        background-position: center;
+        right: 35%;
+    }
+
+    @include mediaNetbook {
+        display: block;
+    }
+
+    @include mediaTablet {
+        font-size: 20px;
+        padding: 16px;
+    }
+}
+
+.sidebar__filter-wrap {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+
+    @include mediaNetbook {
+        transition: all 0.3s ease-out;
+        max-height: 0;
+        padding: 0;
+    }
+
+    &_active {
+        padding: 0 20px 20px;
+        -webkit-transition:max-height 0.4s linear;
+        -moz-transition:max-height 0.4s linear;
+        transition:max-height 0.4s linear;
+        transition: .7s;
+        opacity: 1;
+        max-height: 800px;
+    }
+}
+
+.sidebar__filter-name {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-image: url('../../img/down-arrow.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 20%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: rotate(180deg);
+        cursor: pointer;
+
+        @include rotateArrowClose;
+        animation: rotateArrowClose .5s forwards;
+    }
+    &_active {
+        &::after {
+            @include rotateArrowOpen;
+            animation: rotateArrowOpen .5s forwards;
+        }
+    }
+
+}
+
+.sidebar__params-item{  
+    margin-bottom: 5px; 
+    position: relative;   
+}
+
+.sidebar__params {
+    display: flex;
+    @include resetUl;
+    overflow: hidden;
+    padding-left: 5px;
+    max-height: 0;
+    transition: all 0.6s ease-out;
+    opacity: 0;
+    margin: 10px 0 20px 0;
+    &_active {
+        -webkit-transition:max-height 0.8s linear;
+        -moz-transition:max-height 0.8s linear;
+        transition:max-height 0.8s linear;
+        transition: .9s;
+        opacity: 1;
+        max-height: 300px;
+    }
+}
+
+.sidebar__params-input {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    opacity: 0;
+}
+
+.sidebar__params-label {
+    position: relative;
+    cursor: pointer;
+}
+
+.sidebar__params_checkbox {
+    flex-direction: column;
+}
+
+.sidebar__params-input_checkbox + label {
+    position: relative;
+    &::before{
+        @include customInputBefore;
+
+        background-image: url('../../img/checkmark.svg');
+
+        border-radius: 0;
+        background-size: 90%;
+    }
+}
+
+.sidebar__params-input_checkbox:focus+label::before {
+    background-color: $primary-color;
+    transition: .1s;
+}
+
+.sidebar__params-input_radio + label {
+    position: relative;
+    
+    &::before{
+        @include customInputBefore;
+        border-radius: 50%;
+    }
+}
+
+.sidebar__params-input_radio:focus+label::before{
+    border: 1px solid $white;
+    background-color: $primary-color;
+    transition: .1s;
+}
+
+.sidebar__params-item_text {
+    width: 45%;
+    &:nth-last-of-type(1) {
+        margin-right: 0;
+    }
+}
+.sidebar__params-item_keywords {
+    width: 100%;
+}
+
+.sidebar__params_text {
+    justify-content: space-between;
+}
+.sidebar__params-input_text {
+    border:1px solid $borders;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid $borders;
+    transition: .2s;
+
+    &::placeholder {
+        color: $borders;
+    };
+    &:focus {
+        transition: .2s;
+        outline: none;
+        box-shadow: 0px 0px 0px 1px $primary-color;
+        border: 1px solid $primary-color;
+        border-radius: 0;
+    }
+};
+
+.sidebar__button-search {
+    text-transform: uppercase;
+    border: 0;
+    background-color: $primary-color;
+    color: $white;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: .2s;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0px 2px 5px 1px $button-hover;
+        transition: .2s;
+    }
+    &:active {
+        box-shadow: 0px 1px 2px 1px $button-hover;
+        transition: .1s;
+    }
+}
+
+@include mediaNetbook {
+    .sidebar {
+        width: 100%; 
+        cursor: pointer;
+    }
+    .sidebar__button-search {width: 30%; align-self: center;}
+
+}

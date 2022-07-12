@@ -1,0 +1,242 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins';
+
+.cards {
+    width: 100%;
+    grid-area: cd;
+    &__rendering-control {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.cards__pagination {
+    display: flex;
+    justify-content: flex-start;
+    @include resetUl;
+}
+
+.cards__page {
+    margin-right: 15px;
+    &:nth-last-of-type(1) {
+        margin-right: 0;
+    }
+    &_button {
+        border:0;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        font-size: 16px;
+        background-color: $white;
+        transition: .1s;
+        &:hover {
+            transition: .2s;
+            background-color: $pagination-hover;
+        }
+        &:focus {
+            transition: .2s;
+            background-color: $primary-color;
+        }
+        @include mediaTablet {
+            font-size: 14px;
+        }
+    }
+}
+
+.cards__sort {
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-image: url("../../img/select-arrow.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: 3%;
+        top: 5px;
+        cursor: pointer;
+        transform: rotate(180deg);
+        @include rotateArrowClose;
+        animation: rotateArrowClose .3s forwards;
+    }
+    &_active {
+        &::after {
+            @include rotateArrowOpen;
+            animation: rotateArrowOpen .3s forwards;
+        }
+    }
+}
+
+.cards__sort-text {
+    margin-right: 10px;;
+}
+
+.cards__sort-list {
+    position: relative;
+    width: 200px;
+    padding: 8px;
+    border: 1px solid $borders;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    transition: .1s;
+    box-sizing: content-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &:hover {
+        transition: .2s;
+        border: 1px solid $input-focus;
+    }
+    &:invalid {
+        color: $description-text;
+    }
+}
+
+.cards__sort-item {
+    height: 20px;
+    margin: 5px;
+    font-size: 14px;
+    color: $black;
+}
+
+.cards__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include resetUl;
+    margin:20px 0;
+}
+
+.cards__link {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.cards {
+    &__item {
+        width: 100%;
+        max-height: min-content;
+        background-color: $white;
+        padding: 16px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        transition: .1s;
+        &:nth-last-of-type(1) {
+            margin-bottom: 0;
+        }
+        &:hover {
+            transition: .2s;
+            box-shadow: 0px 2px 3px 2px $card-hover;
+        }
+        &:active {
+            transition: .2s;
+            box-shadow: 0px 1px 3px 1px $card-hover;
+        }
+    }
+    &__wrap {
+        display: flex;
+        margin-right: 15px;
+    }
+    &__img-block {
+        position: relative;
+        background-color: gray;
+        min-width: 224px;
+        height: 168px;
+        margin-right: 20px;
+        overflow: hidden;
+        display: flex;
+        align-items: stretch;
+        &::after{
+            content: 'Image not found';
+            position: absolute;
+            width: max-content;
+            top: 40%;
+            color: $black;
+            left: 20%;
+        }
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+    &__description-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 100%;
+        max-width: 50%;
+        align-items: flex-start;
+        overflow: hidden;
+        @include mediaMax {
+            max-width: 100%;
+        }
+    }
+    &__text-wrap {
+        max-height: 80%;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0;
+        margin-bottom: 10px;
+        color: $black;
+    }
+    &__description {
+        color: $description-text;
+        font-size: 14px;
+        font-weight: 300;
+        overflow: hidden;
+        margin: 0;
+    }
+    &__params {
+        display: flex;
+        @include resetUl;
+        flex-wrap: wrap;
+    }
+    &__params-item {
+        width: max-content;
+        padding: 5px 8px;
+        margin-right: 16px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-weight: 300;
+        color: $white;
+        background-color: $params-background;
+        &:nth-last-of-type(1) {
+            margin-right: 0;
+        }
+    }
+    &__price {
+        white-space: nowrap;
+        margin: 0;
+        color: $default-text;
+    }
+}
+
+.cards__info {
+    color: $default-text;
+    font-size: 16px;
+    max-width: 70%;
+    line-height: 1.5;
+    @include mediaNetbook {
+        font-size: 14px;
+        max-width: 100%;
+    }
+}
+
+
+
+
+

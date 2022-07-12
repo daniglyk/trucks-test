@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="keywords" />
+  <meta name="description" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">Header / Logo</header>
+
+     <nav class="navigation">
+      <ul class="navigation__list"></ul>
+    </nav> 
+    
+
+
+
+    <nav class="breadcrumb">
+      <ul class="breadcrumb__list"></ul>
+    </nav>
+    <main class="main-block">
+      <h1 class="main-block__heading"></h1>
+      <aside class="sidebar">
+        <h3 class="sidebar__heading"></h3>
+        <div class="sidebar__filter-wrap">
+          <p class="sidebar__results">26 Results Found</p>
+          <span class="sidebar__filter-name" id="country">Param 1</span>
+          <ul class="sidebar__params sidebar__params_checkbox sidebar__params_country">
+            <li class="sidebar__params-item">
+              <input type="checkbox" id="country_all" name="all" value="all"
+                class="sidebar__params-input sidebar__params-input_checkbox sidebar__params-input_checked" checked />
+              <label class="sidebar__params-label" for="country_all">Value 1</label>
+            </li>
+            <li class="sidebar__params-item">
+              <input type="checkbox" id="country_germany" name="germany" value="germany"
+                class="sidebar__params-input sidebar__params-input_checkbox" />
+              <label class="sidebar__params-label" for="country_germany">Value 2</label>
+            </li>
+            <li class="sidebar__params-item">
+              <input type="checkbox" id="country_netherlands" name="netherlands" value="netherlands"
+                class="sidebar__params-input sidebar__params-input_checkbox" />
+              <label class="sidebar__params-label" for="country_netherlands">Value 3</label>
+            </li>
+            <li class="sidebar__params-item">
+              <input type="checkbox" id="country_norway" name="norway" value="norway"
+                class="sidebar__params-input sidebar__params-input_checkbox" />
+              <label class="sidebar__params-label" for="country_norway">Value 4</label>
+            </li>
+            <li class="sidebar__params-item">
+              <input type="checkbox" id="country_sweden" name="sweden" value="sweden"
+                class="sidebar__params-input sidebar__params-input_checkbox" />
+              <label class="sidebar__params-label" for="country_sweden">Value 5</label>
+            </li>
+          </ul>
+          <span class="sidebar__filter-name" id="types">Param 2</span>
+          <ul class="sidebar__params sidebar__params_checkbox sidebar__params_types">
+            <li class="sidebar__params-item">
+              <input type="radio" id="types_coaches" name="coaches" value="coaches"
+                class="sidebar__params-input sidebar__params-input_radio sidebar__params-input_checked" checked />
+              <label class="sidebar__params-label" for="types_coaches">Value 2_1</label>
+            </li>
+            <li class="sidebar__params-item">
+              <input type="radio" id="types_subbuses" name="subbuses" value="subbuses"
+                class="sidebar__params-input sidebar__params-input_radio" />
+              <label class="sidebar__params-label" for="types_subbuses">Value 2_2</label>
+            </li>
+            <li class="sidebar__params-item">
+              <input type="radio" id="types_minibuses" name="minibuses" value="minibuses"
+                class="sidebar__params-input sidebar__params-input_radio" />
+              <label class="sidebar__params-label" for="types_minibuses">Value 2_3</label>
+            </li>
+          </ul>
+          <span class="sidebar__filter-name" id="prices">Param 3</span>
+          <ul class="sidebar__params sidebar__params_text sidebar__params_prices">
+            <li class="sidebar__params-item_text">
+              <input type="text" id="price_min" placeholder="min" name="coaches" value=""
+                class="sidebar__params-input_text" checked />
+            </li>
+            <li class="sidebar__params-item_text">
+              <input type="text" id="price_max" placeholder="max" name="subbuses" value=""
+                class="sidebar__params-input_text" />
+            </li>
+          </ul>
+          <span class="sidebar__filter-name" id="keywords">Param 4</span>
+          <ul class="sidebar__params sidebar__params_text sidebar__params_keywords">
+            <li class="sidebar__params-item_text sidebar__params-item_keywords">
+              <input type="text" id="keywords" placeholder="Keywords" name="keywords" value=""
+                class="sidebar__params-input_text sidebar__params-input_keywords" checked />
+            </li>
+          </ul>
+          <button type="button" class="sidebar__button-search">search</button>
+        </div>
+      </aside>
+      <section class="cards">
+        <div class="cards__rendering-control">
+          <ul class="cards__pagination">
+            <li class="cards__page cards__page_prev">
+              <button type="button" class="cards__page_button">&#60;</button>
+            </li>
+            <li class="cards__page">
+              <button type="button" class="cards__page_button">1</button>
+            </li>
+            <li class="cards__page">
+              <button type="button" class="cards__page_button">2</button>
+            </li>
+            <li class="cards__page cards__page_next">
+              <button type="button" class="cards__page_button">&#62;</button>
+            </li>
+          </ul>
+          <div class="cards__sort">
+            <span class="cards__sort-text">Sort by</span>
+            <select class="cards__sort-list" required>
+              <option class="cards__sort-item cards__sort-item_default" value="" selected disabled hidden>Sort options
+              </option>
+              <option class="cards__sort-item" value="date">Value 3_1</option>
+              <option class="cards__sort-item" value="price">Value 3_2</optioni>
+              <option class="cards__sort-item" value="year">Value 3_3</option>
+            </select>
+          </div>
+        </div>
+        <ul class="cards__list">
+        </ul>
+        <div class="cards__rendering-control">
+          <ul class="cards__pagination">
+            <li class="cards__page cards__page_prev">
+              <button type="button" class="cards__page_button">&#60;</button>
+            </li>
+            <li class="cards__page">
+              <button type="button" class="cards__page_button">1</button>
+            </li>
+            <li class="cards__page">
+              <button type="button" class="cards__page_button">2</button>
+            </li>
+            <li class="cards__page cards__page_next">
+              <button type="button" class="cards__page_button">&#62;</button>
+            </li>
+          </ul>
+          <div class="cards__sort">
+            <span class="cards__sort-text">Sort by</span>
+            <select class="cards__sort-list" required>
+              <option class="cards__sort-item cards__sort-item_default" value="" selected disabled hidden>Sort options
+              </option>
+              <option class="cards__sort-item" value="date">Value 3_1</option>
+              <option class="cards__sort-item" value="price">Value 3_2</optioni>
+              <option class="cards__sort-item" value="year">Value 3_3</option>
+            </select>
+          </div>
+        </div>
+        <div class="cards__info">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione
+            molestias
+            soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis? Quis quo
+            molestias
+            repellat? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda et at eveniet! Fugiat velit
+            unde
+            necessitatibus? Debitis illo vero aut. Iusto dolores, cupiditate error expedita veniam laborum repudiandae
+            aspernatur eos?
+          </p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque accusantium ratione
+            molestias
+            soluta, link provident nobis, assumenda dolorum voluptas incidunt inventore quia reiciendis quis? Quis quo
+            molestias repellat?
+          </p>
+          <p>
+            Iste, aliquid ducimus! Delectus in nisi quaerat temporibus blanditiis, molestias deleniti ea illum
+            laudantium
+            numquam. Laborum vero eligendi minus recusandae culpa sequi exercitationem iusto, ipsum sed suscipit fuga
+            molestias veritatis!
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__contact-info">
+        <h2 class="footer__heading">Logo / Company Name</h2>
+        <ul class="footer__contacts">
+          <li class="footer__contacts-item footer__contacts-item_place">Company Adress: Lorem ipsum dolor sit amet
+            18600,
+            Netherlands</li>
+          <li class="footer__contacts-item footer__contacts-item_phone">+38 958 755-00-00</li>
+        </ul>
+        <ul class="footer__social-media">
+          <li class="footer__media-item footer__media-item_facebook"><a href="#" class="footer__media-link"></a></li>
+          <li class="footer__media-item footer__media-item_inst"><a href="#" class="footer__media-link"></a></li>
+          <li class="footer__media-item footer__media-item_twitter"><a href="#" class="footer__media-link"></a></li>
+          <li class="footer__media-item footer__media-item_youtube"><a href="#" class="footer__media-link"></a></li>
+        </ul>
+      </div>
+      <p class="footer__text-info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quos ullam atque
+        accusantium ratione molestias soluta, provident nobis, assumenda dolorum voluptas incidunt inventore quia
+        reiciendis quis. Quis quo molestias repellat.</p>
+    </footer>
+    <p class="copyright">&#169; 2019 - <a class="copyright__link" href="#">Privacy Policy - Terms and Conditions</a></p>
+
+    <template class="template__navigation">
+      <li class="navigation__item">
+        <a href="" class="navigation__link"></a>
+      </li>
+    </template>
+
+    <template class="template__breadcrumb">
+      <li class="breadcrumb__item">
+        <a href="" class="breadcrumb__link"></a>
+      </li>
+    </template>
+
+    <template class="template__card">
+      <li class="cards__item">
+        <a href="#" class="cards__link">
+          <div class="cards__wrap">
+            <div class="cards__img-block">
+              <img class="cards__img" src="#" alt="#" />
+            </div>
+            <div class="cards__description-block">
+              <div class="cards__text-wrap">
+                <h3 class="cards__title"></h3>
+                <p class="cards__description"></p>
+              </div>
+              <ul class="cards__params">
+              </ul>
+            </div>
+          </div>
+          <p class="cards__price"></p>
+        </a>
+      </li>
+    </template>
+  </div>
+</body>
+
+</html>

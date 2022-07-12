@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins';
+
+.page {
+    background-color: $body-background;
+    max-width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    min-width: 640px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    @include mediaMax {
+        margin: 40px 150px 10px;
+    }
+    @include mediaPc {
+        margin: 40px 80px 10px;
+    }
+    @include mediaNetbook {
+        margin: 40px 50px 10px;
+    }
+    @include mediaTablet {
+        margin: 0;
+        padding: 40px 50px 10px;
+        box-sizing: border-box;
+    }
+}

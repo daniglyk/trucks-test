@@ -1,0 +1,107 @@
+@import './variables.scss';
+
+@mixin customInputBefore {
+    transition: .1s;
+    background-color: $white;
+    content: '';
+    position: relative;
+    left:0;
+    bottom: -2px;
+    z-index: 1;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 0px 1px $primary-color;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@mixin animationLinkUnderline {
+    @keyframes animationUnderline {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+}
+
+@mixin resetUl {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin rotateArrowOpen {
+    @keyframes rotateArrowOpen {
+        from {
+            transform: rotate(180deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+@mixin rotateArrowClose {
+    @keyframes rotateArrowClose {
+        from {
+            transform: rotate(360deg);
+        }
+        to {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+
+@mixin paramsOpen {
+    @keyframes paramsOpen {
+        from {
+            max-height: 0;
+        }
+        to {
+            max-height: max-content;
+        }
+    }
+}
+
+@mixin mediaMax {
+    @media (max-width: #{$breakpoint-max}) {
+      @content;
+    }
+}
+
+@mixin mediaPc{
+    @media (max-width: #{$breakpoint-pc}) {
+      @content;
+    }
+}
+
+@mixin mediaNetbook {
+    @media (max-width: #{$breakpoint-netbook}) {
+      @content;
+    }
+}
+
+@mixin mediaTablet {
+    @media (max-width: #{$breakpoint-tablet}) {
+      @content;
+    }
+}
+
+@mixin mediaMobile {
+    @media (max-width: #{$breakpoint-mobile}) {
+      @content;
+    }
+}
+
+@mixin mediaMin {
+    @media (max-width: #{$breakpoint-min}) {
+      @content;
+    }
+}

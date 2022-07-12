@@ -1,0 +1,20 @@
+@import '../blocks/page/page.scss';
+@import '../blocks/header/header.scss';
+@import '../blocks/navigation/navigation.scss';
+@import '../blocks/breadcrumbs/breadcrumbs.scss';
+@import '../blocks/main-block/main-block.scss';
+@import '../blocks/sidebar/sidebar.scss';
+@import '../blocks/cards/cards.scss';
+@import '../blocks/footer/footer.scss';
+@import '../blocks/copyright/copyright.scss';
+
+html {
+    font-family: $font-family;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    background-color: $body-background;
+}

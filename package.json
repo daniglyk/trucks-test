@@ -1,0 +1,44 @@
+{
+  "name": "frontend_test_task-master",
+  "version": "1.0.0",
+  "description": "**Задание**: сверстать страницу листинга интернет-магазина, в которой нужно отрендерить датасет из [файла dataset.json](https://raw.githubusercontent.com/alexnaidovich/frontend_test_task/master/dataset.json). Дизайн - произвольный, за основу можно взять пример в данном репозитории ([jpeg](https://raw.githubusercontent.com/alexnaidovich/frontend_test_task/master/marketplace_sketch.jpg), [figma](https://www.figma.com/file/GZDWwVSeu1N8KHRH7B0may/Test_task_sketch?node-id=0%3A1)). Фотографии к карточкам товаров из датасета лежат в [папке src/img](https://github.com/alexnaidovich/frontend_test_task/tree/master/src/img) данного репозитория. По готовности отправить HR 2 ссылки: на репозиторий с исходным кодом проекта и на сверстанную страницу, задеплоенную на любой бесплатный хостинг (Github Pages, Zeit Now, Netlify, Heroku и др.).",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack serve",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kseniya7991/Test-task-Web-Marketing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kseniya7991/Test-task-Web-Marketing/issues"
+  },
+  "homepage": "https://github.com/kseniya7991/Test-task-Web-Marketing#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.6.0",
+    "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "node-sass": "^7.0.1",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.3.1",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.12",
+    "resolve-url-loader": "^5.0.0"
+  }
+}

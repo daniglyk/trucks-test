@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: $description-text;
+    margin-bottom: 15px;
+    margin-top: 0;
+    &__link {
+        color: $active-link-color;
+        text-decoration: none;
+    }
+}

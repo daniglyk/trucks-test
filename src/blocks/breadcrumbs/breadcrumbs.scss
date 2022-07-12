@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+
+.breadcrumb {
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    &__list {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        @include resetUl;
+    }
+    &__item {
+        margin-right: 30px;
+        position: relative;
+        color: $black;
+        &::after {
+            content:">";
+            position: absolute;
+            right: -20px;
+        }
+        &:nth-last-of-type(1) {
+            margin-right: 0;
+            &::after {
+                content: ''
+            }
+        }
+        &:nth-of-type(1) {
+            color: $active-link-color;
+        }
+    }
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        font-weight: 400;
+        font-size: 17px;
+        transition: .3s;
+        &:hover {
+            color: $active-link-color;
+            transition: .3s;
+        }
+    }
+}
